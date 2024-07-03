@@ -65,7 +65,7 @@ def upload_level():
         return jsonify({"message": "Level uploaded successfully"}), 200
 
 @app.route('/levels', methods=['GET'])
-@limiter.limit("100 per hour")  # Limit level list requests to 100 per hour
+@limiter.limit("200 per hour")  # Limit level list requests to 100 per hour
 def get_levels():
     levels = load_levels()
     return jsonify(levels)
